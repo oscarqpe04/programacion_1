@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<h1>@ViewBag.titulo</h1>
+<p>Total Estudiantes: @ViewBag.total</p>
+<table class="table table-striped tabled-bordered">
+    <tr>
+        <th>#</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+    </tr>
+    @for (var i = 0; i < ViewBag.estudiantes.Count; i++)
+    {
+        <tr>
+            <td>@(i + 1)</td>
+            <td>@(ViewBag.estudiantes[i].nombre)</td>
+            <td>@(ViewBag.estudiantes[i].apellido)</td>
+            <td>@(ViewBag.estudiantes[i].edad)</td>
+        </tr>
+    }
+</table>
