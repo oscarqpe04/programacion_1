@@ -1,0 +1,5 @@
+<h4>{{nombre}}</h4>
+<button type="button" (click)="vote(true)"  
+    [disabled]="didVote">Agree</button>
+<button type="button" (click)="vote(false)" 
+    [disabled]="didVote">Disagree</button>

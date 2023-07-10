@@ -1,0 +1,11 @@
+<h2>Should mankind colonize the Universe?</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+<br>
+<input [(ngModel)]="newVoter" />
+<button type="button" (click)="addVoter()">Add Voter</button>
+<br>
+<app-vote
+    *ngFor="let voter of voters"
+    [nombre]="voter"
+    (voted)="onVoted($event)">
+</app-vote>

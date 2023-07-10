@@ -1,0 +1,24 @@
+Layout Component
+<h1>My Angular App</h1>
+<nav>
+  <ul>
+    <li><a [routerLink]="['/first']" routerLinkActive="router-link-active" >First Component</a></li>
+    <li><a [routerLink]="['/second']" routerLinkActive="router-link-active" >Second Component</a></li>
+  </ul>
+</nav>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label for="">First Name</label>
+    <input type="text" formControlName="firstName" [(ngModel)]="profile.firstName">
+    <label for="">Last Name</label>
+    <input type="text" formControlName="lastName" [(ngModel)]="profile.lastName">
+    <button type="submit" [disabled]="!profileForm.valid" mat-raised-button color="primary">Submit</button>
+</form>
+<ul>
+    <li *ngFor="let item of usuarios">
+        <b>{{item.id}} - {{item.usuario}}</b>
+    </li>
+</ul>
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+<router-outlet></router-outlet>

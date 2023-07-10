@@ -1,0 +1,22 @@
+<h1>Hola {{ title }}</h1>
+<br>
+<input [(ngModel)]="title" 
+  [ngClass]="{'mi-clase-css': title == 'oscar'}"
+  [ngStyle]="{'background-color': 'red'}"/>
+<br>
+<button type="button" 
+  (click)="miFuncion()">Ver Valor</button>
+<br>
+
+<button *ngIf="title == 'juan'" type="button" 
+  (click)="miFuncion2()">Modificar Valor</button>
+
+<div>
+  <ul>
+    <li *ngFor="let item of heroes"
+      [ngStyle]="{'cursor': 'pointer'}"
+      (click)="miFuncion3(item)">{{item}}</li>
+  </ul>
+</div>
+
+<app-vote-taker />
